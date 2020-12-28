@@ -25,7 +25,7 @@ export class MineralListComponent implements OnInit {
     },
     {
       "Id":3,
-      "Name":"Ochi Tigru Șlefuit",
+      "Name":"Ochi Tigru",
       "Formula":"SiO2",
       "Price":"200 RON",
       "Cantitate":"10 buc"
