@@ -1,1 +1,5 @@
-<p>mineral-list works!</p>
+<div class="row">
+  <div *ngFor="let Mineral of Minerals" class="shadow-lg p-3">
+      <app-mineral-card [Mineral] = "Mineral"></app-mineral-card>
+  </div>
+</div>

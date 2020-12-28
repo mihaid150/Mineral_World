@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component(
 {
@@ -8,10 +8,5 @@ import { Component } from '@angular/core';
 })
 export class MineralCardComponent
 {
-  Property: any = {
-    "Id":1,
-    "Name":"Pirita",
-    "Formula":"FeS2",
-    "Price":1200
-  }
+  @Input() Mineral : any
 }
