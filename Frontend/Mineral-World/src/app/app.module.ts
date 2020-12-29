@@ -9,11 +9,15 @@ import { MineralListComponent } from './Mineral/mineral-list/mineral-list.compon
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { MineralWorldService } from './services/mineral-world.service';
 import { AddMineralComponent } from './Mineral/add-mineral/add-mineral.component';
+import { MineralDetailsComponent } from './Mineral/mineral-details/mineral-details.component';
 
 
 const appRoutes: Routes = [
   {path: '', component: MineralListComponent},
-  {path: 'sell-mineral', component: AddMineralComponent}
+  {path: 'buy-minerals', component: MineralListComponent},
+  {path: 'sell-minerals', component: AddMineralComponent},
+  {path: 'information-about-minerals', component: MineralListComponent},
+  {path: 'mineral-details/:id', component: MineralDetailsComponent}
 ]
 
 @NgModule({
@@ -22,7 +26,8 @@ const appRoutes: Routes = [
     MineralCardComponent,
     MineralListComponent,
     NavBarComponent,
-    AddMineralComponent
+    AddMineralComponent,
+    MineralDetailsComponent
    ],
   imports: [
     BrowserModule,

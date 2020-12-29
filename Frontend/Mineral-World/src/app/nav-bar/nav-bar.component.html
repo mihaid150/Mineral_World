@@ -1,19 +1,19 @@
 <nav class="navbar navbar-expand-lg navbar-dark link bg-dark fixed-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/">Mineral-World</a>
+    <a class="navbar-brand" routerLink="/">Mineral-World</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="margin-right: 400px;">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/">Buy</a>
+          <a class="nav-link " aria-current="page" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active" routerLink="/buy-minerals">Buy</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/sell-mineral">Sell</a>
+          <a class="nav-link" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active"  routerLink="/sell-minerals">Sell</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/">Information about Minerals</a>
+          <a class="nav-link" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active"  routerLink="/information-about-minerals">Information about Minerals</a>
         </li>
       </ul>
       <form class="d-flex" >
