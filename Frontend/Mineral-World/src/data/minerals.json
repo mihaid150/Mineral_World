@@ -1,37 +1,37 @@
 [
   {
-      "Id":1,
+      "id":1,
       "Name":"Aur 22k",
       "Formula":"Au",
-      "Price":"100 RON",
-      "Cantitate":"20"
+      "Price":"100",
+      "Quantity":"20"
   },
   {
-    "Id":2,
+    "id":2,
     "Name":"Cuarț Roz",
     "Formula":"SiO2",
-    "Price":"80 RON",
-    "Cantitate":"20 buc"
+    "Price":"80",
+    "Quantity":"20"
   },
   {
-    "Id":3,
+    "id":3,
     "Name":"Ochi Tigru",
     "Formula":"SiO2",
-    "Price":"200 RON",
-    "Cantitate":"10 buc"
+    "Price":"200",
+    "Quantity":"10"
   },
   {
-    "Id":4,
+    "id":4,
     "Name":"Ametist",
     "Formula":"SiO2 Fe+3",
-    "Price":"150 RON",
-    "Cantitate":"15 buc"
+    "Price":"150",
+    "Quantity":"15"
   },
   {
-    "Id":5,
+    "id":5,
     "Name":"Pirită",
     "Formula":"FeS2",
-    "Price":"50 RON",
-    "Cantitate":"30 buc"
+    "Price":"50",
+    "Quantity":"30"
   }
 ]

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MineralWorldService } from 'src/app/services/mineral-world.service';
+import { IMineral } from '../IMineral.interface';
 
 @Component({
   selector: 'app-mineral-list',
@@ -8,7 +9,7 @@ import { MineralWorldService } from 'src/app/services/mineral-world.service';
 })
 export class MineralListComponent implements OnInit {
 
-  minerals!: any;
+  minerals!: Array<IMineral>;
 
 
 
@@ -20,6 +21,9 @@ export class MineralListComponent implements OnInit {
       (       data: any)=>{
         this.minerals=data;
         console.log(data);
+      }, error =>{
+        console.log('httperror:');
+        console.log(error);
       }
     );
   }

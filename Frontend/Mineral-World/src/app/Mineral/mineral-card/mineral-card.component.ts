@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { IMineral } from '../IMineral.interface';
 
 @Component(
 {
@@ -8,5 +9,5 @@ import { Component, Input } from '@angular/core';
 })
 export class MineralCardComponent
 {
-  @Input() mineral : any
+  @Input() mineral!: IMineral;
 }
