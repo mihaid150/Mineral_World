@@ -8,5 +8,5 @@ import { Component, Input } from '@angular/core';
 })
 export class MineralCardComponent
 {
-  @Input() Mineral : any
+  @Input() mineral : any
 }
