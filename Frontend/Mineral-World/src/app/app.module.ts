@@ -17,7 +17,8 @@ const appRoutes: Routes = [
   {path: 'buy-minerals', component: MineralListComponent},
   {path: 'sell-minerals', component: AddMineralComponent},
   {path: 'information-about-minerals', component: MineralListComponent},
-  {path: 'mineral-details/:id', component: MineralDetailsComponent}
+  {path: 'mineral-details/:id', component: MineralDetailsComponent},
+  {path: '**', component: MineralListComponent}
 ]
 
 @NgModule({

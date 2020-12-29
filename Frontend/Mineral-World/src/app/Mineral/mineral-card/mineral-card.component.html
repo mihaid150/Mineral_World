@@ -1,6 +1,7 @@
  <div class="card">
     <div class class="card-img-wrapper">
-      <img class="minImg" src="assets\images\mineral-gen.png">
+      <img *ngIf="mineral.Image" class="minImg" src="assets\images\{{mineral.Image}}.jpg">
+      <img *ngIf="!mineral.Image" class="minImg" src="assets\images\mineral-gen.jpg">
        <ul class="list-inline text-center member-icons animate">
          <li class ="list-inline-item">
            <button class = "btn btn-dark mr-2 " routerLink="/mineral-details/{{mineral.id}}"><i class="fas fa-edit"></i></button>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-mineral-details',
@@ -8,10 +8,19 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class MineralDetailsComponent implements OnInit {
 public mineralid: number | undefined;
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private router:Router) { }
 
   ngOnInit() {
-    this.mineralid = this.route.snapshot.params['id'];
+    this.mineralid = +this.route.snapshot.params['id'];
+    this.route.params.subscribe(
+      (params)=> {
+        this.mineralid = +params['id'];
+      }
+    )
   }
-
+  onSelectNext()
+{
+  this.mineralid! += 1;
+  this.router.navigate(['mineral-details', this.mineralid]);
+}
 }

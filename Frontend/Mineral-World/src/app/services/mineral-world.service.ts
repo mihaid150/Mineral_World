@@ -14,13 +14,13 @@ export class MineralWorldService {
 
   constructor(private http:HttpClient) {
    }
-    getAllMinerals(): Observable<IMineral[]>
+    getAllMinerals(BuySell: number): Observable<IMineral[]>
     {
      return this.http.get('data/minerals.json').pipe( map((data:any)=>
       {
            const mineralsArray: Array<IMineral> =[];
              for (const id in data){
-             if(data.hasOwnProperty(id))
+             if(data.hasOwnProperty(id) && data[id].BuySell === BuySell)
              {
                mineralsArray.push(data[id]);
              }

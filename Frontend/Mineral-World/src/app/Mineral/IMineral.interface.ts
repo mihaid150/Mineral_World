@@ -4,4 +4,6 @@ export interface IMineral{
   Formula: string;
   Price: number;
   Quantity: number;
+  BuySell: number;
+  Image?: string;
 }
