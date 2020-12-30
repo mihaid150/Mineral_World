@@ -10,17 +10,18 @@ import { IMineral } from '../IMineral.interface';
 })
 export class MineralListComponent implements OnInit {
 
-  BuySell = 1;
+  BuySell= 1;
   minerals!: Array<IMineral>;
 
   constructor(private route: ActivatedRoute, private mineralworldService: MineralWorldService) { }
 
   ngOnInit(): void
   {
-     if ( this.route.snapshot.url.toString())
-     {
-       this.BuySell = 2;
-     }
+      if ( this.route.snapshot.url.toString())
+      {
+        this.BuySell = 1;
+      }
+
 
     this.mineralworldService.getAllMinerals(this.BuySell).subscribe(
       (       data: any)=>{

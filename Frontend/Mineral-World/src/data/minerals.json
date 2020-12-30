@@ -2,7 +2,7 @@
   {
       "id":1,
       "BuySell":1,
-      "Name":"Aur 22k",
+      "Name":"Gold 22k",
       "Formula":"Au",
       "Price":"100",
       "Quantity":"20",
@@ -11,7 +11,7 @@
   {
     "id":2,
     "BuySell":2,
-    "Name":"Cuarț Roz",
+    "Name":"Pink Quartz",
     "Formula":"SiO2",
     "Price":"80",
     "Quantity":"20",
@@ -20,7 +20,7 @@
   {
     "id":3,
     "BuySell":1,
-    "Name":"Ochi Tigru",
+    "Name":"Tiger Eyes",
     "Formula":"SiO2",
     "Price":"200",
     "Quantity":"10",
@@ -29,7 +29,7 @@
   {
     "id":4,
     "BuySell":2,
-    "Name":"Ametist",
+    "Name":"Amethiyst",
     "Formula":"SiO2 Fe+3",
     "Price":"150",
     "Quantity":"15",
@@ -38,7 +38,7 @@
   {
     "id":5,
     "BuySell":1,
-    "Name":"Pirită",
+    "Name":"Pyrites",
     "Formula":"FeS2",
     "Price":"50",
     "Quantity":"30",

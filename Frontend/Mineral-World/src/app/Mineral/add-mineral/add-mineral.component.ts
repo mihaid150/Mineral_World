@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./add-mineral.component.scss']
 })
 export class AddMineralComponent implements OnInit {
-
+  @ViewChild ('Form') addMineralForm: NgForm | undefined;
   constructor(private router: Router) { }
 
   ngOnInit() {
@@ -16,6 +17,12 @@ export class AddMineralComponent implements OnInit {
   onBack()
   {
     this.router.navigate(['/'])
+  }
+
+  onSubmit(Form: NgForm)
+  {
+    console.log('Congrats');
+    console.log(this.addMineralForm);
   }
 
 }

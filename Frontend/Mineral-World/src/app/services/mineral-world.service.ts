@@ -14,20 +14,32 @@ export class MineralWorldService {
 
   constructor(private http:HttpClient) {
    }
-    getAllMinerals(BuySell: number): Observable<IMineral[]>
-    {
-     return this.http.get('data/minerals.json').pipe( map((data:any)=>
-      {
-           const mineralsArray: Array<IMineral> =[];
-             for (const id in data){
-             if(data.hasOwnProperty(id) && data[id].BuySell === BuySell)
-             {
-               mineralsArray.push(data[id]);
+     getAllMinerals(BuySell: number): Observable<IMineral[]>
+     {
+      return this.http.get('data/minerals.json').pipe( map((data:any)=>
+       {
+            const mineralsArray: Array<IMineral> =[];
+              for (const id in data){
+              if(data.hasOwnProperty(id) && data[id].BuySell === BuySell)
+              {
+                mineralsArray.push(data[id]);
+              }
              }
-            }
-           return mineralsArray;
-      }
-          )
-    );
-    }
+            return mineralsArray;
+       }
+           )
+     );
+     }
+
+    // getAllMinerals(buySell: number): Observable<IMineral[]> {
+    //   return this.http.get('data/minerals.json').pipe(map((data: any) => {
+    //     return data.reduce((allMinerals: IMineral[], currentMineral: IMineral) => {
+    //         currentMineral.BuySell === buySell ?
+    //           allMinerals.push(currentMineral) :
+    //           allMinerals;
+    //         return allMinerals;
+    //       }, [])
+    //   }));
+    // }
+
 }
