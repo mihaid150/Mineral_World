@@ -15,6 +15,7 @@ import { UserLoginComponent } from './user/user-login/user-login/user-login.comp
 import { UserRegisterComponent } from './user/user-register/user-register/user-register.component';
 import { MainPageComponent } from './main-page/main-page/main-page.component';
 import { InformationComponent } from './information/information/information.component';
+import { UserServiceService } from './services/user-service.service';
 
 
 const appRoutes: Routes = [
@@ -49,7 +50,8 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
-    MineralWorldService
+    MineralWorldService,
+    UserServiceService
   ],
   bootstrap: [AppComponent]
 })
