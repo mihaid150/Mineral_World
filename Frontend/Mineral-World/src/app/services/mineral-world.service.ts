@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {map} from 'rxjs/operators';
-import { IMineral } from '../Mineral/IMineral.interface';
+import { IMineralBase } from 'src/app/model/imineralbase';
 import { Observable } from 'rxjs';
+import { Mineral } from '../model/mineral';
 
 @Injectable({
   providedIn: 'root'
@@ -14,11 +15,11 @@ export class MineralWorldService {
 
   constructor(private http:HttpClient) {
    }
-     getAllMinerals(BuySell: number): Observable<IMineral[]>
+     getAllMinerals(BuySell: number): Observable<IMineralBase[]>
      {
       return this.http.get('data/minerals.json').pipe( map((data:any)=>
        {
-            const mineralsArray: Array<IMineral> =[];
+            const mineralsArray: Array<IMineralBase> =[];
               for (const id in data){
               if(data.hasOwnProperty(id) && data[id].BuySell === BuySell)
               {
@@ -41,5 +42,10 @@ export class MineralWorldService {
     //       }, [])
     //   }));
     // }
+
+    addMineral(mineral: Mineral)
+    {
+      localStorage.setItem('newMin',JSON.stringify(mineral));
+    }
 
 }

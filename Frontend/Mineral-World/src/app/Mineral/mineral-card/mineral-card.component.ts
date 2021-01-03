@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { IMineral } from '../IMineral.interface';
+import { IMineralBase } from 'src/app/model/imineralbase';
 
 @Component(
 {
@@ -9,5 +9,6 @@ import { IMineral } from '../IMineral.interface';
 })
 export class MineralCardComponent
 {
-  @Input() mineral!: IMineral;
+  @Input() mineral!: IMineralBase;
+  @Input() hideIcons: boolean | undefined;
 }

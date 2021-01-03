@@ -1,35 +1,117 @@
+<div class = "row mb-5">
+ <div class = "col-9 shadow-lg p-0 bg-white">
 <div class="card">
     <div class = "card-header">
-       Sell a Mineral
+       <h3>Sell a Mineral</h3>
     </div>
     <div class = "card-body" >
-       <form (ngSubmit)='onSubmit(addMineralForm)' #Form = "ngForm">
-        <div class = "form-group col-12">
-            <label for = "name">Name</label>
-            <input type = "text" class = "form-control" #propName ="ngModel" ngModel name = "Name" required>
-            <span *ngIf="!propName.valid && propName.touched" class = "error-block">
-                Please provide name!
-            </span>
+       <form (ngSubmit)="onSubmit()"  [formGroup]="addMineralForm">
+        <div class = "tab-panel">
+           <tabset class = "member-tabset"  #formTabs>
+
+              <tab heading = "Basic Details" formGroupName="BasicDetails">
+
+                <div class = "form-group col-12"  >
+                  <label for = "name">Name</label>
+                  <input type = "text" class = "form-control"  ngModel formControlName = "Name"  ngModel [(ngModel)] = "mineralView.Name" >
+                  <div class = "error-block" *ngIf="Name.invalid && (nextClicked || Name.touched)"> Please give the name of the mineral</div>
+                </div>
+
+                <div class = "form-group col-12">
+                  <label for = "formula">Formula</label>
+                  <input type = "text" class = "form-control" ngModel  formControlName="Formula" [(ngModel)] = "mineralView.Formula" >
+                </div>
+
+                <div class = "form-group col-12" >
+                  <p>Class of Minerals</p>
+                  <div class = "btn-group" btnRadioGroup  formControlName="class"  ngModel [(ngModel)] = "mineralView.Class">
+                    <label *ngFor ="let cm of classMinerals"
+                    class = "btn btn-outline-dark text-central"
+                    [btnRadio]="cm" tabindex="0" role="button" name = "class"> {{cm}}
+                    </label>
+                  </div>
+                </div>
+
+                <div class = "form-group col-12">
+                  <button type = "button"    class = "btn btn-dark btn-block"  (click)="selectTab(1, BasicDetails.valid)">Next</button>
+                </div>
+                </tab>
+
+              <tab heading = "Price and Quantity" formGroupName="PriceQuantityInfo" >
+
+                <div class = "form-group col-12">
+                   <p>Currency</p>
+                   <div class = "btn-group" btnRadioGroup  ngModel formControlName="Currency"  [(ngModel)] = "mineralView.Currency">
+                     <label *ngFor ="let c of currency"
+                     class = "btn btn-outline-dark mr-2"
+                     [btnRadio]="c" tabindex="0" role="button" name = "Currency"> {{c}}
+                     </label>
+                   </div>
+                </div>
+
+                  <div class = "form-group col-12">
+                    <label for = "price">Price</label>
+                    <input type = "text" class = "form-control" ngModel formControlName = "Price"  [(ngModel)] = "mineralView.Price" >
+                  </div>
+
+              <div class = "form-group col-12">
+                <p>Units of Mass</p>
+                <div class = "btn-group" btnRadioGroup ngModel formControlName="Units"  [(ngModel)] = "mineralView.Units">
+                  <label *ngFor ="let m of units"
+                  class = "btn btn-outline-dark mr-2"
+                  [btnRadio]="m" tabindex="0" role="button" name = "Units"> {{m}}
+                  </label>
+                </div>
+             </div>
+
+              <div class = "form-group col-12">
+                <label for = "quantity">Quantity</label>
+                <input type = "text" class = "form-control" ngModel formControlName = "Quantity" [(ngModel)] = "mineralView.Quantity">
+            </div>
+
+            <div class = "form-group col-12">
+              <button type = "button" class = "btn btn-dark btn-block" (click)="selectTab(2,PriceQuantityInfo.valid)" >Next</button>
+              <button type = "button" class = "btn btn-dark btn-block" (click)="selectTab(0,PriceQuantityInfo.valid)">Back</button>
+           </div>
+              </tab>
+
+              <tab heading = "Other Details" formGroupName="Detailss">
+                <div class = "form-group col-12">
+                  <label for = "details">Describe any details that may be useful</label>
+                  <input type = "text" class = "form-control" ngModel formControlName="Details" [(ngModel)]="mineralView.Details">
+              </div>
+
+                <div class = "form-group col-12">
+                  <button type = "button" class = "btn btn-dark btn-block" (click)="selectTab(3,Detailss.valid)">Next</button>
+                  <button type = "button" class = "btn btn-dark btn-block" (click)="selectTab(1,Detailss.valid)">Back</button>
+               </div>
+              </tab>
+
+              <tab heading = "Images" >
+                <div class="form-group col-12">
+                  <div class="photo-control">
+                      <button class="mt-5" type="button">Upload</button> <br>
+                      This is under construction
+                  </div>
+                </div>
+                <div class = "form-group col-12">
+                  <button type = "button" class = "btn btn-dark btn-block" (click)="selectTab(2,Detailss.valid)">Back</button>
+                  <button type = "reset" class = "btn btn-dark btn-block" >Cancel</button>
+                  <button type = "submit" class = "btn btn-dark btn-block" >Save</button>
+               </div>
+              </tab>
+           </tabset>
         </div>
-
-        <div class = "form-group col-12">
-          <label for = "formula">Formula</label>
-          <input type = "text" class = "form-control" ngModel name = "Formula">
-      </div>
-
-      <div class = "form-group col-12">
-        <label for = "price">Price</label>
-        <input type = "text" class = "form-control" ngModel name = "Price">
-    </div>
-
-    <div class = "form-group col-12">
-      <label for = "qunatity">Quantity</label>
-      <input type = "text" class = "form-control" ngModel name = "Quantity">
-  </div>
-  <div class = "form-group col-12">
-     <button [disabled] = "!Form.valid" type = "submit" class = "btn btn-dark mr-2">Save</button>
-     <button type = "reset" class = "btn btn-dark">Cancel</button>
-  </div>
        </form>
     </div>
 </div>
+</div>
+  <div class = "col-3 mr-auto">
+    <div class = "card-header ">
+    <h4 class = "text-white">Your Offer Preview</h4>
+    </div>
+     <div class = "shadow-lg p-3 bg-white ">
+        <app-mineral-card [mineral]="mineralView" [hideIcons] = "true"></app-mineral-card>
+     </div>
+    </div>
+  </div>

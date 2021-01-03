@@ -1,3 +1,23 @@
+.card {
+  min-height: auto;
+}
+
+.card-body h5{
+  font-family: 'Times New Roman';
+  color: #3d35ad;
+}
+
+
+
+.font-highlight {
+  font-style: italic;
+}
+
+.card-body h2{
+  font-family: 'Times New Roman Bold';
+  color: #080342;
+}
+
 
 .card-img-wrapper{
  overflow: hidden;

@@ -2,7 +2,7 @@
     <div class class="card-img-wrapper">
       <img *ngIf="mineral.Image" class="minImg" src="assets\images\{{mineral.Image}}.jpg">
       <img *ngIf="!mineral.Image" class="minImg" src="assets\images\mineral-gen.jpg">
-       <ul class="list-inline text-center member-icons animate">
+       <ul  *ngIf="!hideIcons" class="list-inline text-center member-icons animate">
          <li class ="list-inline-item">
            <button class = "btn btn-dark mr-2 " routerLink="/mineral-details/{{mineral.id}}"><i class="fas fa-edit"></i></button>
          </li>
@@ -14,10 +14,17 @@
 
 
     </div>
-      <div class="card-body p-3 text-center">
-          <h2>{{mineral.Name}}</h2>
-          <h5>{{mineral.Formula}}</h5>
-          <h5>{{mineral.Price}}</h5>
-          <h5>{{mineral.Quantity}}</h5>
+      <div class = "card-body p-1 ">
+        <h2 class = "mb-1 text-center">{{mineral.Name}}</h2>
+        <hr class = "mt-0 mb-0">
+        <h5 class = "text-center">Formula: {{mineral.Formula}}</h5>
+        <hr class = "mt-0 mb-0">
+        <h5 class = "text-center">Class: {{mineral.Class}}</h5>
+        <hr class = "mt-0 mb-0">
+        <h5 class="font-highlight text-center">Price: {{mineral.Price}} {{mineral.Currency}}</h5>
+        <hr class = "mt-0 mb-0">
+        <h5 class="font-highlight text-center">Quantity: {{mineral.Quantity}} {{mineral.Units}}</h5>
+        <hr class = "mt-0 mb-0">
+
       </div>
 </div>

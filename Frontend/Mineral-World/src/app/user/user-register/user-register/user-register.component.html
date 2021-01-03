@@ -5,7 +5,7 @@
       Register
     </div>
     <div class="card-body">
-      <form [formGroup]="registerationForm" (ngSubmit)="onSubmit()">
+      <form [formGroup]="registerationForm!" (ngSubmit)="onSubmit()">
         <div class="form-group col-12">
             <label for="name" class="form-label">Name</label>
             <input type="text" class="form-control"
@@ -34,10 +34,8 @@
           <label for="passwrod" class="form-label">Password</label>
           <input type="password" class="form-control" formControlName="password">
           <span *ngIf="!password.valid &&(password.touched || userSubmitted)" class="error-block">
-            <span *ngIf="password.errors['required']">
-              Please provide password
-            </span>
-            <span *ngIf="password.errors.minlength">
+
+            <span *ngIf="password.errors!.minlength">
               Password should not be lesser than 8 character
             </span>
           </span>
@@ -51,7 +49,7 @@
               Please confirm password
             </span>
           </span>
-            <span *ngIf="registerationForm.hasError('notmatched') && confirmPassword.valid">
+            <span *ngIf="registerationForm!.hasError('notmatched')&&confirmPassword.valid ">
               Password not matched
             </span>
         </div>
@@ -62,6 +60,66 @@
             <span *ngIf = "!mobile.valid && (mobile.touched || userSubmitted) " class = "error-block">
               <span *ngIf = "mobile.hasError('required')">
                    Please provide mobile number
+              </span>
+            </span>
+        </div>
+
+        <div class="form-group col-12">
+          <label for="country" class="form-label">Country</label>
+          <input type="text" class="form-control" formControlName="country">
+            <span *ngIf = "!country.valid && (country.touched || userSubmitted) " class = "error-block">
+              <span *ngIf = "country.hasError('required')">
+                   Please provide your country
+              </span>
+            </span>
+        </div>
+
+        <div class="form-group col-12">
+          <label for="state" class="form-label">State</label>
+          <input type="text" class="form-control" formControlName="state">
+            <span *ngIf = "!state.valid && (state.touched || userSubmitted) " class = "error-block">
+              <span *ngIf = "state.hasError('required')">
+                   Please provide your state
+              </span>
+            </span>
+        </div>
+
+        <div class="form-group col-12">
+          <label for="city" class="form-label">City</label>
+          <input type="text" class="form-control" formControlName="city">
+            <span *ngIf = "!city.valid && (city.touched || userSubmitted) " class = "error-block">
+              <span *ngIf = "city.hasError('required')">
+                   Please provide your city
+              </span>
+            </span>
+        </div>
+
+        <div class="form-group col-12">
+          <label for="street" class="form-label">Street</label>
+          <input type="text" class="form-control" formControlName="street">
+            <span *ngIf = "!street.valid && (street.touched || userSubmitted) " class = "error-block">
+              <span *ngIf = "street.hasError('required')">
+                   Please provide your street
+              </span>
+            </span>
+        </div>
+
+        <div class="form-group col-12">
+          <label for="number" class="form-label">Number</label>
+          <input type="text" class="form-control" formControlName="number">
+            <span *ngIf = "!number.valid && (number.touched || userSubmitted) " class = "error-block">
+              <span *ngIf = "number.hasError('required')">
+                   Please provide your number
+              </span>
+            </span>
+        </div>
+
+        <div class="form-group col-12">
+          <label for="postalCode" class="form-label">Postal Code</label>
+          <input type="text" class="form-control" formControlName="postalCode">
+            <span *ngIf = "!postalCode.valid && (postalCode.touched || userSubmitted) " class = "error-block">
+              <span *ngIf = "postalCode.hasError('required')">
+                   Please provide your Postal Code
               </span>
             </span>
         </div>

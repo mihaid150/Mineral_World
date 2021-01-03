@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MineralWorldService } from 'src/app/services/mineral-world.service';
-import { IMineral } from '../IMineral.interface';
+import { IMineralBase } from 'src/app/model/imineralbase';
 
 @Component({
   selector: 'app-mineral-list',
@@ -11,7 +11,7 @@ import { IMineral } from '../IMineral.interface';
 export class MineralListComponent implements OnInit {
 
   BuySell= 1;
-  minerals!: Array<IMineral>;
+  minerals!: Array<IMineralBase>;
 
   constructor(private route: ActivatedRoute, private mineralworldService: MineralWorldService) { }
 
