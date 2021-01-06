@@ -15,7 +15,7 @@ import * as alertyfy from 'alertifyjs';
 })
 export class AddMineralComponent implements OnInit {
 
-  //@ViewChild ('Form') addMineralForm!: NgForm
+ // @ViewChild ('Form') addMineralForm!: NgForm;
   @ViewChild('formTabs') formTabs!: TabsetComponent;
 
   addMineralForm!: FormGroup;
@@ -44,7 +44,7 @@ export class AddMineralComponent implements OnInit {
   constructor(private fb: FormBuilder,private router: Router, private MineralWorldService: MineralWorldService) { }
 
   ngOnInit() {
-     this.CreateAddMineralForm();
+      this.CreateAddMineralForm();
   }
 
 
@@ -69,7 +69,7 @@ export class AddMineralComponent implements OnInit {
     this.router.navigate(['/'])
   }
 
-  onSubmit(Form: NgForm)
+  onSubmit()
   {
     // this.nextClicked = true;
     // if(this.allTabsValid()){
@@ -80,21 +80,32 @@ export class AddMineralComponent implements OnInit {
     // }else {
 
     // }alertyfy.error("Try again");
-    if(this.addMineralForm.invalid)
-    {
-      this.displayErrors = true;
-      return;
-    }
-    const formData = this.addMineralForm.getRawValue();
+    // // if(this.addMineralForm.invalid)
+    // // {
+    // //   this.displayErrors = true;
+    // //   return;
+    // // }
+    // // const formData = this.addMineralForm.getRawValue();
+    // // if(this.allTabsValid()){
+    // //      this.mapMineral();
+    // //      this.MineralWorldService.addMineral(this.mineral);
+    // //      alertyfy.success("Congrats");
+    // //      console.log(this.addMineralForm);
+    // //   }else {
+    // //     alertyfy.error("Try again");
+    // //    }
+    // console.log('COngrats');
+    // console.log(this.addMineralForm);
+    this.nextClicked = true;
     if(this.allTabsValid()){
-         this.mapMineral();
-         this.MineralWorldService.addMineral(this.mineral);
-         alertyfy.success("Congrats");
-         console.log(this.addMineralForm);
-      }else {
-        alertyfy.error("Try again");
-       }
-
+      this.mapMineral();
+      this.MineralWorldService.addMineral(this.mineral);
+      alertyfy.success('YOu did it');
+      console.log(this.addMineralForm);
+    } else
+    {
+      alertyfy.error('review it');
+    }
 
   }
 
@@ -121,9 +132,10 @@ export class AddMineralComponent implements OnInit {
 
   selectTab(NextTabId: number, IsCurrentTabValid: boolean)
   {
-    this.nextClicked = true;
-    if(IsCurrentTabValid){
-     this.formTabs.tabs[NextTabId].active =true;}
+    // this.nextClicked = true;
+    // if(IsCurrentTabValid){
+    //  this.formTabs.tabs[NextTabId].active =true;}
+    this.formTabs.tabs[NextTabId].active = true ;
   }
 
   allTabsValid(): boolean {
@@ -189,4 +201,5 @@ export class AddMineralComponent implements OnInit {
         }
 //#endregion
 //#endregion
+
 }

@@ -23,7 +23,6 @@ import { MainPageComponent } from './main-page/main-page/main-page.component';
 import { InformationComponent } from './information/information/information.component';
 import { UserServiceService } from './services/user-service.service';
 import { AuthService } from './services/auth.service';
-//import { AddMineralNewComponent } from './Mineral/add-mineralNew/add-mineralNew.component';
 //import { AlertifyService } from './services/alertify.service';
 
 
@@ -32,7 +31,6 @@ const appRoutes: Routes = [
   {path: 'main', component: MainPageComponent},
   {path: 'buy-minerals', component: MineralListComponent},
   {path: 'sell-minerals', component: AddMineralComponent},
-  //{path: 'sell-minerals*', component: AddMineralNewComponent},
   {path: 'information-about-minerals', component: InformationComponent},
   {path: 'mineral-details/:id', component: MineralDetailsComponent},
   {path: 'user/login', component: UserLoginComponent},
@@ -52,7 +50,6 @@ const appRoutes: Routes = [
     UserRegisterComponent,
     MainPageComponent,
     InformationComponent,
-   // AddMineralNewComponent
    ],
   imports: [
     BrowserModule,
