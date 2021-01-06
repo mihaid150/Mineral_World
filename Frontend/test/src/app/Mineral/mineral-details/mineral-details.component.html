@@ -1,0 +1,14 @@
+<p>
+  mineral-details works!
+  Selected mineral id is {{mineralid}}
+  <br/> <br/>
+
+  <button (click)= "onSelectNext()" class = "btn btn-dark">Select Next Page</button>
+
+  <br/> <br/>
+
+  <button routerLink = "/mineral-details/1" class = "btn btn-dark">1</button>
+  <button routerLink = "/mineral-details/2" class = "btn btn-dark">2</button>
+  <button routerLink = "/mineral-details/3" class = "btn btn-dark">3</button>
+  <button [routerLink] = "['/mineral-details/','4']" class = "btn btn-dark">4</button>
+</p>

@@ -27,7 +27,7 @@ export class AddMineralComponent implements OnInit {
   currency: Array<string> = ['RON','USD','EUR']
   units: Array<string> = ['Grams','Kilograms','Pounds']
 
-   mineralView: IMineralBase = {
+ mineralView: IMineralBase = {
       id: null as any,
       Name: '',
       Formula: '',
@@ -44,7 +44,7 @@ export class AddMineralComponent implements OnInit {
   constructor(private fb: FormBuilder,private router: Router, private MineralWorldService: MineralWorldService) { }
 
   ngOnInit() {
-
+     this.CreateAddMineralForm();
   }
 
 
@@ -71,16 +71,29 @@ export class AddMineralComponent implements OnInit {
 
   onSubmit(Form: NgForm)
   {
-    this.nextClicked = true;
+    // this.nextClicked = true;
+    // if(this.allTabsValid()){
+    //   this.mapMineral();
+    //   this.MineralWorldService.addMineral(this.mineral);
+    //   alertyfy.success("Congrats");
+    //   console.log(this.addMineralForm);
+    // }else {
+
+    // }alertyfy.error("Try again");
+    if(this.addMineralForm.invalid)
+    {
+      this.displayErrors = true;
+      return;
+    }
+    const formData = this.addMineralForm.getRawValue();
     if(this.allTabsValid()){
-      this.mapMineral();
-      this.MineralWorldService.addMineral(this.mineral);
-      alertyfy.success("Congrats");
-      console.log(this.addMineralForm);
-    }else {
-
-    }alertyfy.error("Try again");
-
+         this.mapMineral();
+         this.MineralWorldService.addMineral(this.mineral);
+         alertyfy.success("Congrats");
+         console.log(this.addMineralForm);
+      }else {
+        alertyfy.error("Try again");
+       }
 
 
   }

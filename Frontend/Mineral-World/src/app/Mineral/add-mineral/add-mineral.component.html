@@ -19,12 +19,12 @@
 
                 <div class = "form-group col-12">
                   <label for = "formula">Formula</label>
-                  <input type = "text" class = "form-control" ngModel  formControlName="Formula" [(ngModel)] = "mineralView.Formula" >
+                  <input type = "text" class = "form-control" ngModel  formControlName="Formula" [(ngModel)] = "mineralView.Formula">
                 </div>
 
                 <div class = "form-group col-12" >
                   <p>Class of Minerals</p>
-                  <div class = "btn-group" btnRadioGroup  formControlName="class"  ngModel [(ngModel)] = "mineralView.Class">
+                  <div class = "btn-group" btnRadioGroup  formControlName="class"   [(ngModel)] = "mineralView.Class" >
                     <label *ngFor ="let cm of classMinerals"
                     class = "btn btn-outline-dark text-central"
                     [btnRadio]="cm" tabindex="0" role="button" name = "class"> {{cm}}
@@ -41,7 +41,7 @@
 
                 <div class = "form-group col-12">
                    <p>Currency</p>
-                   <div class = "btn-group" btnRadioGroup  ngModel formControlName="Currency"  [(ngModel)] = "mineralView.Currency">
+                   <div class = "btn-group" btnRadioGroup  formControlName="Currency"  [(ngModel)] = "mineralView.Currency">
                      <label *ngFor ="let c of currency"
                      class = "btn btn-outline-dark mr-2"
                      [btnRadio]="c" tabindex="0" role="button" name = "Currency"> {{c}}
@@ -51,12 +51,12 @@
 
                   <div class = "form-group col-12">
                     <label for = "price">Price</label>
-                    <input type = "text" class = "form-control" ngModel formControlName = "Price"  [(ngModel)] = "mineralView.Price" >
+                    <input type = "text" class = "form-control" ngModel formControlName = "Price"  [(ngModel)] = "mineralView.Price">
                   </div>
 
               <div class = "form-group col-12">
                 <p>Units of Mass</p>
-                <div class = "btn-group" btnRadioGroup ngModel formControlName="Units"  [(ngModel)] = "mineralView.Units">
+                <div class = "btn-group" btnRadioGroup  formControlName="Units"  [(ngModel)] = "mineralView.Units" >
                   <label *ngFor ="let m of units"
                   class = "btn btn-outline-dark mr-2"
                   [btnRadio]="m" tabindex="0" role="button" name = "Units"> {{m}}
@@ -75,10 +75,10 @@
            </div>
               </tab>
 
-              <tab heading = "Other Details" formGroupName="Detailss">
+              <tab heading = "Other Details" formGroupName="Detailss" >
                 <div class = "form-group col-12">
                   <label for = "details">Describe any details that may be useful</label>
-                  <input type = "text" class = "form-control" ngModel formControlName="Details" [(ngModel)]="mineralView.Details">
+                  <input type = "text" class = "form-control" ngModel formControlName="Details" [(ngModel)]="mineralView.Details" >
               </div>
 
                 <div class = "form-group col-12">
