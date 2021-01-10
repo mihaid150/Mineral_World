@@ -49,7 +49,7 @@ export class AddMineralComponent implements OnInit {
 
 
    mapMineral():void {
-     //this.mineral.id = this.id.value;
+     this.mineral.id = this.MineralWorldService.newMinId();
      this.mineral.Name = this.Name.value;
      this.mineral.Formula = this.Formula.value;
      this.mineral.Class = this.Class.value;
@@ -71,37 +71,13 @@ export class AddMineralComponent implements OnInit {
 
   onSubmit()
   {
-    // this.nextClicked = true;
-    // if(this.allTabsValid()){
-    //   this.mapMineral();
-    //   this.MineralWorldService.addMineral(this.mineral);
-    //   alertyfy.success("Congrats");
-    //   console.log(this.addMineralForm);
-    // }else {
-
-    // }alertyfy.error("Try again");
-    // // if(this.addMineralForm.invalid)
-    // // {
-    // //   this.displayErrors = true;
-    // //   return;
-    // // }
-    // // const formData = this.addMineralForm.getRawValue();
-    // // if(this.allTabsValid()){
-    // //      this.mapMineral();
-    // //      this.MineralWorldService.addMineral(this.mineral);
-    // //      alertyfy.success("Congrats");
-    // //      console.log(this.addMineralForm);
-    // //   }else {
-    // //     alertyfy.error("Try again");
-    // //    }
-    // console.log('COngrats');
-    // console.log(this.addMineralForm);
     this.nextClicked = true;
     if(this.allTabsValid()){
       this.mapMineral();
       this.MineralWorldService.addMineral(this.mineral);
       alertyfy.success('YOu did it');
       console.log(this.addMineralForm);
+      this.router.navigate(['/buy-minerals'])
     } else
     {
       alertyfy.error('review it');

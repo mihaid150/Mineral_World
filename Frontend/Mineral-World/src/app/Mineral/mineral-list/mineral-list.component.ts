@@ -26,6 +26,16 @@ export class MineralListComponent implements OnInit {
     this.mineralworldService.getAllMinerals(this.BuySell).subscribe(
       (       data: any)=>{
         this.minerals=data;
+        var Data = localStorage.getItem('newMin');
+        if(Data != null){
+          const newMineral = JSON.parse(Data);
+          if(newMineral)
+        {
+          this.minerals = [newMineral, ...this.minerals];
+        }
+        }
+
+
         console.log(data);
       }, error =>{
         console.log('httperror:');

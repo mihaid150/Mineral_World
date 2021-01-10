@@ -17,8 +17,7 @@
     "Class":"Oxides",
     "Price":"80 USD",
     "Quantity":"20 Grams",
-     "Dated":"28/08/2016",
-    "BuySell":2,
+    "BuySell":1,
     "Image":"cuart-roz"
   },
   {
@@ -28,7 +27,6 @@
     "Class":"Oxides",
     "Price":"200 EUR",
     "Quantity":"2 Kilograms",
-    "Dated":"16/11/2016",
     "BuySell":1,
     "Image":"ochi-de-tigru-șlefuit"
   },
@@ -39,8 +37,7 @@
     "Class":"Silicates",
     "Price":"150 RON",
     "Quantity":"15 Kilograms",
-    "Dated":"10/02/2018",
-    "BuySell":2,
+    "BuySell":1,
     "Image":"ametist"
   },
   {
@@ -50,7 +47,6 @@
     "Class":"Sulfides",
     "Price":"50 USD",
     "Quantity":"30 Pounds",
-    "Dated":"25/07/2019",
     "BuySell":1,
     "Image":"pirita"
   },

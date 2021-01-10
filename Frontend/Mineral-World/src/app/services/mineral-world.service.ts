@@ -32,20 +32,41 @@ export class MineralWorldService {
      );
      }
 
-    // getAllMinerals(buySell: number): Observable<IMineral[]> {
-    //   return this.http.get('data/minerals.json').pipe(map((data: any) => {
-    //     return data.reduce((allMinerals: IMineral[], currentMineral: IMineral) => {
-    //         currentMineral.BuySell === buySell ?
-    //           allMinerals.push(currentMineral) :
-    //           allMinerals;
-    //         return allMinerals;
-    //       }, [])
-    //   }));
-    // }
-
     addMineral(mineral: Mineral)
     {
-      localStorage.setItem('newMin',JSON.stringify(mineral));
+      let newMin =[mineral];
+      if(localStorage.getItem('newMin'))
+      {
+        var Data = localStorage.getItem('newMin');
+        if( Data !=null )
+        {
+          try {
+          newMin = [mineral, ...JSON.parse(Data)];
+          localStorage.setItem('newMin',JSON.stringify(newMin));}
+          catch(e){
+            newMin = [mineral];
+            localStorage.setItem('newMin',JSON.stringify(newMin));
+          }
+        }
+
+      }
+
+    }
+
+    newMinId ()
+    {
+      if(localStorage.getItem('MID')){
+        var data = localStorage.getItem('MID');
+        if( data != null){
+            localStorage.setItem('MID',String(+data + 1));
+            return +data;
+        } return 101;
+      }
+      else{
+          localStorage.setItem('MID','101');
+          return 101;
+      }
+
     }
 
 }
